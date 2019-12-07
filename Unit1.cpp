@@ -18,8 +18,9 @@ bool kolizja(TImage *pilka, TImage *cegla)
 {
    if( pilka->Left >= cegla->Left-pilka->Width && pilka->Left <= cegla->Left+cegla->Width &&
        pilka->Top >= cegla->Top-pilka->Height && pilka->Top <= cegla->Top+cegla->Height)
-      return true;
-      else return false;
+          return true;
+       else
+          return false;
 }
 
 //---------------------------------------------------------------------------
@@ -33,7 +34,7 @@ void __fastcall TOkno::Timer_pilkaTimer(TObject *Sender)
     //odbij od lewej sciany
     if (b->Left-5 <= tlo->Left) x=-x;
 
-    //odbij od górnej sciany
+    //odbij od gï¿½rnej sciany
     if (b->Top-5 <= tlo->Top) y=-y;
 
    //odbij od prawej sciany
@@ -46,8 +47,8 @@ void __fastcall TOkno::Timer_pilkaTimer(TObject *Sender)
         b->Visible=false;
         Button1->Caption = "Przegrales! Jeszcze chcesz?";
         Button1->Visible=true;
-          if(punkty > rekord) rekord=punkty;
-        points->Caption = "Zdoby³es: " + IntToStr( punkty) + " pkt";
+        if(punkty > rekord) rekord=punkty;
+             points->Caption = "Zdobyï¿½es: " + IntToStr( punkty) + " pkt";
         points-> Visible= True;
         Best-> Caption = "Twoj rekord to : " + IntToStr(rekord);
         Best -> Visible = True;
@@ -59,7 +60,7 @@ void __fastcall TOkno::Timer_pilkaTimer(TObject *Sender)
        sndPlaySound("sounds/sound1.wav", SND_ASYNC);
                if (y>0) y=-y;
        }
-    //wygrana = zlikwidowanie wsyzstkich blokow
+    //wygrana = zlikwidowanie wszystkich blokow
      if (do_wygranej<=0)
      {
         Timer_pilka->Enabled = false;
@@ -67,11 +68,11 @@ void __fastcall TOkno::Timer_pilkaTimer(TObject *Sender)
         if(punkty > rekord) rekord=punkty;
 		Button1->Caption = "Wygrana! Jeszcze raz?";
         Button1->Visible = true;
-         points->Caption = "Zdoby³es: " + IntToStr( punkty) + " pkt";
+        points->Caption = "Zdobyï¿½es: " + IntToStr( punkty) + " pkt";
         points-> Visible= True;
 		Best-> Caption = "Twoj rekord to : " + IntToStr(rekord);
         Best -> Visible = True;
-}
+     }
 
     //blok1
     if (kolizja(b,Image1) && Image1->Visible==true) {x=-x; y=-y; do_wygranej--; Image1->Visible=false; punkty += 10;}
@@ -98,13 +99,13 @@ void __fastcall TOkno::Timer_pilkaTimer(TObject *Sender)
     //blok12
     if (kolizja(b,Image12) && Image12->Visible==true) {x=-x; y=-y; do_wygranej--; Image12->Visible=false; punkty += 10;}
 
-     if (kolizja(b,Image13) && Image13->Visible==true) {x=-x; y=-y; do_wygranej--; Image13->Visible=false; punkty += 10;}
-     if (kolizja(b,Image14) && Image14->Visible==true) {x=-x; y=-y; do_wygranej--; Image14->Visible=false; punkty += 10;}
-     if (kolizja(b,Image15) && Image15->Visible==true) {x=-x; y=-y; do_wygranej--; Image15->Visible=false; punkty += 10;}
-     if (kolizja(b,Image16) && Image16->Visible==true) {x=-x; y=-y; do_wygranej--; Image16->Visible=false; punkty += 10;}
-     if (kolizja(b,Image17) && Image17->Visible==true) {x=-x; y=-y; do_wygranej--; Image17->Visible=false; punkty += 10;}
-     if (kolizja(b,Image18) && Image18->Visible==true) {x=-x; y=-y; do_wygranej--; Image18->Visible=false; punkty += 10;}
-     if (kolizja(b,Image19) && Image19->Visible==true) {x=-x; y=-y; do_wygranej--; Image19->Visible=false; punkty += 10;}
+    if (kolizja(b,Image13) && Image13->Visible==true) {x=-x; y=-y; do_wygranej--; Image13->Visible=false; punkty += 10;}
+    if (kolizja(b,Image14) && Image14->Visible==true) {x=-x; y=-y; do_wygranej--; Image14->Visible=false; punkty += 10;}
+    if (kolizja(b,Image15) && Image15->Visible==true) {x=-x; y=-y; do_wygranej--; Image15->Visible=false; punkty += 10;}
+    if (kolizja(b,Image16) && Image16->Visible==true) {x=-x; y=-y; do_wygranej--; Image16->Visible=false; punkty += 10;}
+    if (kolizja(b,Image17) && Image17->Visible==true) {x=-x; y=-y; do_wygranej--; Image17->Visible=false; punkty += 10;}
+    if (kolizja(b,Image18) && Image18->Visible==true) {x=-x; y=-y; do_wygranej--; Image18->Visible=false; punkty += 10;}
+    if (kolizja(b,Image19) && Image19->Visible==true) {x=-x; y=-y; do_wygranej--; Image19->Visible=false; punkty += 10;}
 
 
 }
@@ -154,8 +155,8 @@ void __fastcall TOkno::Button1Click(TObject *Sender)
      Image16->Visible=true; Image17->Visible=true; Image18->Visible=true;
      Image19->Visible=true;
 
-      points-> Visible=false;
-      punkty=0;
+     points-> Visible=false;
+     punkty=0;
 
 }
 
